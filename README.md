@@ -53,13 +53,36 @@ Utilize o Postman para testar suas chamadas. [https://www.getpostman.com/](https
     |   ├── README-JR.md
     |   ├── README.md
 
-## Versionalização
+### Métodos API : Usarem o Postman para facilitar os testes
+
+#### URL: 
+    http://localhost:3456/categoria
+
+#### Method: GET   
+
+#### Method: POST
+   
+    parameters: 
+    name
+
+#### Method: PUT
+   
+    parameters: 
+    name
+    id
+
+#### Method: DELETE
+    
+    parameters: 
+    id
+
+### Versionalização
 
 - Para melhor organização seguiremos as diretrizes da Versionalização semântica -  1.0.0
 
-## License
+### License
 
-[MIT](https://github.com/farnetani)©[farnetani](https://github.com/farnetani)
+[MIT](https://github.com/farnetani)©[2017 farnetani](https://github.com/farnetani)
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
