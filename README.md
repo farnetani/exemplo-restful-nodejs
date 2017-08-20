@@ -1,6 +1,6 @@
 # RESTful com Node.js, Restify e MySQL
 
-## 20.08.2017
+### Update: 20.08.2017
 
 > Este projeto foi desenvolvido durante a gravação da série de screencasts disponível em [https://www.youtube.com/playlist?list=PLFJmwzuHdBRTBbkyH0gATtDhj6ikOIkMy](https://www.youtube.com/playlist?list=PLFJmwzuHdBRTBbkyH0gATtDhj6ikOIkMy) e é pré-requisito para o curso **Single Page Application com Vue.js** [http://www.treinatom.com.br/pt/edukee/detalhes-do-evento/190edc6b7593e3081a858f55652abd92a9d07353](http://www.treinatom.com.br/pt/edukee/detalhes-do-evento/190edc6b7593e3081a858f55652abd92a9d07353)
 
@@ -35,23 +35,23 @@ Utilize o Postman para testar suas chamadas. [https://www.getpostman.com/](https
 
 ### Estrutura de Pasta
 
- ├── restful-ws
- |   ├── node_modules (não será importado, rodar npm install)
- |   ├── src
- |       ├── http
- |           ├── routes.js
- |       ├── server
- |           ├── cors.js
- |           ├── index.js
- |       ├── services
- |           ├── mysql
- |               ├── categories.js
- |               ├── index.js
- |   ├── .eslintrc.json
- |   ├── package-lock.json
- |   ├── package.json
- |   ├── README-JR.md
- |   ├── README.md
+    ├── restful-ws
+    |   ├── node_modules (não será importado, rodar npm install)
+    |   ├── src
+    |       ├── http
+    |           ├── routes.js
+    |       ├── server
+    |           ├── cors.js
+    |           ├── index.js
+    |       ├── services
+    |           ├── mysql
+    |               ├── categories.js
+    |               ├── index.js
+    |   ├── .eslintrc.json
+    |   ├── package-lock.json
+    |   ├── package.json
+    |   ├── README-JR.md
+    |   ├── README.md
 
 ## Versionalização
 
