@@ -22,7 +22,7 @@ const categories = deps => {
             return false // para não chegar no resolve e para não termos que usar else
           }
     // resolve({ pagination: { page: 1, results: results.length }, categories: results })
-          resolve({ categories: name, id: results.insertId })  // insertId = pega o ultimo id
+          resolve({ category: {name, id: results.insertId } })  // insertId = pega o ultimo id
         })
       })
     },

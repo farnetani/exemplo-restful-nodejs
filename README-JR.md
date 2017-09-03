@@ -140,3 +140,52 @@
           resolve({ categories: results })
         })
       })
+
+  ## Aula 14
+  - Criar o arquivo .env
+  - https://github.com/motdotla/dotenv
+    npm install dotenv --save-dev
+
+  ## Aula 15 : TESTES
+  - Solução chamada AVA (pronuncia-se: eiva)
+  - https://github.com/avajs/ava
+  - Mais usado = .is
+  - Instalar: 
+    npm install --global ava
+
+  - Rodar na raiz do projeto:
+    ava --init 
+
+    - Isso irá criar no package.json em scripts um script chamado test: ava.
+    - pode-se por também a flag --verbose para que ele nos passe mais informações
+
+    - "test": "ava --verbose"
+
+    - Basta criar os arquivos de testes: <nome>.test.js
+    - Rodar: npm run test
+    - Exemplo de arquivo de teste
+    
+    ```
+          import test from 'ava';
+
+      test('foo', t => {
+        t.pass();
+      });
+
+      test('bar', async t => {
+        const bar = Promise.resolve('bar');
+
+        t.is(await bar, 'bar');
+      });
+    ```
+- Criar um banco para os testes
+MYSQL_TEST_DATABASE=restful_ws_test
+
+
+
+    
+
+
+
+
+
