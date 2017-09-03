@@ -30,11 +30,12 @@ const categories = deps => {
       return new Promise((resolve, reject) => {
         const { connection, errorHandler } = deps // object destructor
         connection.query('UPDATE categories SET name = ? WHERE id = ?', [name, id], (error, results) => {
-          if (error) {
+          if (error || !results.affectedRows) {
             errorHandler(error, `Falha ao atualizar a categoria ${name}`, reject)
             return false // para não chegar no resolve e para não termos que usar else
           }
-          resolve({ categories: name, id: id })
+          console.log(results)
+          resolve({ category: {name, id}, affectedRows: results.affectedRows })
         })
       })
     },
@@ -42,11 +43,11 @@ const categories = deps => {
       return new Promise((resolve, reject) => {
         const { connection, errorHandler } = deps // object destructor
         connection.query('DELETE FROM categories WHERE id = ?', [id], (error, results) => {
-          if (error) {
+          if (error || !results.affectedRows) {
             errorHandler(error, `Falha ao tentar excluir a categoria de ID = ${id}`, reject)
             return false // para não chegar no resolve e para não termos que usar else
           }
-          resolve({ message: 'Categoria excluída com sucesso!' })
+          resolve({ message: 'Categoria excluída com sucesso!', affectedRows: results.affectedRows })
         })
       })
     }
