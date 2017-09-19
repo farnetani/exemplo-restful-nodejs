@@ -147,6 +147,7 @@
     npm install dotenv --save-dev
 
   ## Aula 15 : TESTES
+
   - Solução chamada AVA (pronuncia-se: eiva)
   - https://github.com/avajs/ava
   - Mais usado = .is
@@ -183,9 +184,51 @@ MYSQL_TEST_DATABASE=restful_ws_test
 
 
 
-    
+## Aula 20
+- Criptografar a senha
+- npm i --save-dev sha1
+- Módulo de usuários (users.js)
+- password, adicionar o método sha1(senha)
+
+## ferramenta online sha1 (para fazer o hash)
+- www.sha1-online.com
+- senha = 123456 = 7c4a8d09ca3762af61e59520943dc26494f8941b
+
+## Aula 21 - Jsonwebtoken
+- npm i --save-dev jsonwebtoken
+- Validar o token: http://jwt.io
+- Criar um usuário
+
+insert into users (email, password) values ('farnetani@gmail.com','7c4a8d09ca3762af61e59520943dc26494f8941b');
+
+- Ir no postman e testar a chamada POST
+http://localhost:3456/autenticacao
+Parametros = email e password:
+email = farnetani@gmail.com
+password = 123456
+
+
+## Aula 22 - Middleware : para proteger as rotas
+- Precisaremos criar um middleware.
 
 
 
+## Aula 23 
+- Para passar o token, basta passar no headers:
+key = x-access-token
+value = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhcm5ldGFuaUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTA1Njc1ODI1LCJleHAiOjE1MDU3NjIyMjV9.sFowE8pyiRnNvmtmADU9RMW5ZXGjgM-l8DFUJpPIhEU
+
+O token é obtido pelo metodo autenticacao e tem validade de 24hs.
 
 
+    // Exemplo de como usar o token (decoded)
+     try {
+       const categories = await db.categories().all()
+       const user = req.decoded
+       res.send({ categories, user })
+     } catch (error) {
+       res.send(error)
+     }
+     next() 
+
+## Aula 24 - refactoring do código

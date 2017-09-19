@@ -9,6 +9,19 @@ const routes = (server) => {
       res.send(error)
     }
     next()
+
+    // Exemplo de como usar o token (decoded)
+    // try {
+    //   const categories = await db.categories().all()
+    //   const user = req.decoded
+    //   res.send({ categories, user })
+    // } catch (error) {
+    //   res.send(error)
+    // }
+    // next()
+
+
+
     // Promisses
     // db.categories().all().then(categories => {
     //   res.send(categories)
@@ -57,6 +70,16 @@ const routes = (server) => {
 
   server.get('/', (req, res, next) => {
     res.send('Enjoy the silencex...')
+    next()
+  })
+
+  server.post('autenticacao', async (req, res, next) => {
+    const { email, password } = req.params
+    try {
+      res.send(await db.auth().authenticate(email, password))
+    } catch (error) {
+      res.send(error)
+    }
     next()
   })
 }

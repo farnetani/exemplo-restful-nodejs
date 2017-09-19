@@ -26,6 +26,9 @@ mysql> create table categories (id INT(11) unsigned not null auto_increment, nam
 mysql> insert into categories (name) values ('Categoria 01');
 mysql> insert into categories (name) values ('Categoria 02');
 
+- USERS:
+create table users (id INT(11) unsigned not null auto_increment, email varchar(255), password varchar(40), primary key(id));
+
 ```
 4. O *endpoint* do serviço estará disponível em http://localhost:3456 .
 
